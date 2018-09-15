@@ -1,0 +1,358 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+// Home page
+.home-page
+	position: relative
+	min-height: 650px
+	height: 100vh
+	background-color: $dark-color
+.contact-page
+	position: relative
+	min-height: 650px
+	height: 100vh
+	background-color: $light-grey-color
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: top right
+	&::before
+		content: ''
+		width: 50%
+		position: absolute
+		top: 0
+		left: 0
+		height: 100%
+		background-color: darken($accent-color, 10)
+		opacity: .7
+.projects-page
+	background-color: $dark-color
+
+.logo-flex
+	display: flex
+	position: relative
+	height: 100%
+	top: 0
+	&-center
+		margin: auto
+
+// Home page parallax
+.logo-container
+	position: relative
+	width: 450px
+	height: 451px
+.logo-home-svg
+	width: inherit
+	height: auto
+	position: absolute
+	top: 0
+	left: 0
+	&.logo-home-svg-index2, &.logo-home-svg-index3, &.logo-home-svg-index4, &.logo-home-svg-index5, &.logo-home-svg-index6, &.logo-home-svg-index7, &.logo-home-svg-index8, &.logo-home-svg-index9, &.logo-home-svg-index10
+		opacity: 0
+
+
+.lion
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	width: 300px
+	&-wrap
+		opacity: 0
+		transition: all 1s ease
+
+////////////////////////////////////////////////////////////////////////
+.nav-item
+	position: fixed
+	cursor: pointer
+	color: $main-color
+	font-weight: bold
+	text-transform: uppercase
+	font-size: 27px
+	letter-spacing: 15px
+	transition: all .5s ease
+	z-index: 100
+	span
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		padding-left: 30px
+	&:hover
+		letter-spacing: 50px
+		color: $accent-color
+		text-decoration: none
+	&-about, &-contact, &-home-contact
+		width: 65px
+		height: 100%
+		top: 0
+	&-about
+		span
+			transform: translate(-50%, -50%) rotate(90deg)
+	&-contact
+		right: 0
+		span
+			transform: translate(-50%, -50%) rotate(-90deg)
+	&-projects,
+		width: 100%
+		height: 65px
+		bottom: 0
+	&-home-projects
+		width: 100%
+		height: 95px
+		top: 0
+		span
+			padding-left: 0
+	&-home-contact
+		color: $dark-color
+		span
+			transform: translate(-50%, -50%) rotate(-90deg)
+			white-space: nowrap
+		&:hover
+			color: $dark-color
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+.home-header
+	svg
+		height: auto
+		position: absolute
+		// top: 0
+		// right: 0
+		path
+			fill: $grey-color
+			stroke: $grey-color
+			stroke-width: 0.26458332
+			fill-opacity: 0
+			stroke-opacity: 0
+		&#home-header-index1
+			// width: 264px
+			// 200 - 264
+			// x - 70 x=70*200/264
+			width: 200px
+			left: 10%
+			bottom: 30%
+		&#home-header-index2
+			bottom: 39%
+			left: 20%
+			width: 53px
+		&#home-header-index3
+			bottom: 47%
+			left: 8.5%
+			width: 268px
+		&#home-header-index4
+			bottom: 60%
+			left: 25%
+			width: 55px
+		&#home-header-index5
+			bottom: 65%
+			right: 21%
+			// width: 92px | 120 -150 x - 235 
+			width: 140px
+		&#home-header-index6
+			right: 11%
+			bottom: 50%
+			width: 220px
+			// width: 144px
+
+
+.logo-all-pages
+	z-index: 100
+	position: fixed
+	top: 15px
+	left: 5px
+	img
+		width: 55px
+
+.callback
+	padding: 0
+	padding-top: 32% 
+	position: relative
+	p
+		margin-top: 0
+		font-size: 22px
+		line-height: 1.2
+	input, textarea
+		width: 100%
+		margin-top: 15px
+		background-color: transparent
+		border: rgba(0,0,0,.2) 1px solid
+		border-bottom: rgba(0,0,0,.2) 2px solid
+		border-radius: 2px
+		padding: 8px 15px
+		outline: 0
+		font-size: 16px
+		color: #000
+		line-height: 1.2
+	textarea
+		min-height: 100px
+		resize: none
+	.button
+		border: 1px solid rgba(0,0,0,.2)
+		background-color: transparent
+		padding: 5px 20px
+		transition: all .3s ease
+		margin-top: 25px
+		&:hover
+			background-color: rgba(0,0,0,.4)
+			color: #fff
+	.success
+		display: none
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		text-transform: uppercase
+		font-weight: 700
+		z-index: 10
+		span 
+			margin: auto
+		& ~ *
+			transition: all .5s ease
+		&.active ~ *
+			opacity: .5
+			filter: blur(10px)
+
+.social
+	position: absolute
+	right: 15px
+	top: 15px
+	li
+		a
+			font-size: 22px
+			border: 1px solid $dark-color
+			border-radius: 50%
+			display: inline-block
+			width: 40px
+			height: 40px
+			line-height: 40px
+			text-align: center
+			transition: all .3s ease
+			color: $dark-color
+			margin-right: 5px
+			&:hover
+				color: #fff
+				background-color: $dark-color
+
+ul, li
+	list-style-type: none
+	margin: 0
+	padding: 0
+	display: inline-block
+
+
+
+
+#fullpage
+	.section
+		text-align: center
+		// overflow: hidden
+		&:nth-child(odd)
+			.project-image
+				img
+					&:nth-child(odd)
+						width: 70%
+					&:nth-child(even)
+						width: 30%
+		&:nth-child(even)
+			.project-image
+				img
+					&:nth-child(even)
+						width: 70%
+					&:nth-child(odd)
+						width: 30%
+		.project
+			&-image
+				display: inline-block
+				width: 55%
+				// transition-delay: 1s
+				&:hover
+					// border: 2px solid $accent-color
+					span
+						letter-spacing: -30px
+						opacity: 0
+					img
+						filter: grayscale(0)
+						opacity: .9
+						&:nth-child(odd), &:nth-child(even)
+							transform: rotate(0) translate(0, 0)
+				img
+					filter: grayscale(100%)
+					opacity: .4
+					transition: all 1s ease
+					vertical-align: top
+					// &:nth-child(1)
+					// 	transform: translate(-300px, 50px) rotate(-30deg)
+					// &:nth-child(2)
+					// 	transform: translate(-50px, -100px) rotate(30deg)
+					// &:nth-child(3)
+					// 	transform: translate(540px, 0px) rotate(80deg) 
+					// &:nth-child(4)
+					// 	transform: translate(-240px, 60px) rotate(-40deg) 
+				span
+					position: absolute
+					top: 50%
+					left: 50%
+					font-size: 56px
+					line-height: 2
+					font-weight: bold
+					color: $accent-color
+					text-transform: uppercase
+					transform: translate(-50%, -50%)
+					letter-spacing: 40px
+					white-space: nowrap
+					padding-left: 40px
+					transition: all .7s ease
+
+@import "media" // Всегда в конце
